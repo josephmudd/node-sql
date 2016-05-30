@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2016 at 08:56 PM
+-- Generation Time: May 30, 2016 at 09:14 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -53,17 +53,19 @@ CREATE TABLE `pet` (
   `ownerId` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `species` varchar(64) NOT NULL,
-  `breed` varchar(64) NOT NULL
+  `breed` varchar(64) NOT NULL,
+  `isMale` tinyint(4) NOT NULL,
+  `isAlive` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pet`
 --
 
-INSERT INTO `pet` (`id`, `ownerId`, `name`, `species`, `breed`) VALUES
-(1, 1, 'Woofers', 'Dog', 'Hound'),
-(2, 1, 'Whiskers', 'Cat', ''),
-(3, 2, 'Frankie', 'Dog', 'Pit Bull');
+INSERT INTO `pet` (`id`, `ownerId`, `name`, `species`, `breed`, `isMale`, `isAlive`) VALUES
+(1, 1, 'Woofers', 'Dog', 'Hound', 1, 1),
+(2, 1, 'Whiskers', 'Cat', '', 0, 1),
+(3, 2, 'Frankie', 'Dog', 'Pit Bull', 1, 1);
 
 -- --------------------------------------------------------
 
